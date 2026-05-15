@@ -1,4 +1,4 @@
-# Android
+# ====== Android ======
 *.iml
 .gradle
 /local.properties
@@ -9,19 +9,26 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/build/
 
-# Kotlin
+# Kotlin compiled
 *.class
 *.jar
 *.aar
 
-# Node (legacy web files)
+# Signing keys
+*.keystore
+*.jks
+google-services.json
+
+# ====== Node / Vite (legacy web files - not part of Android project) ======
 node_modules/
 dist/
 .env
 .env.local
+.env.*.local
+npm-debug.log*
 
-# Keys & secrets
-google-services.json
-*.keystore
-*.jks
+# ====== OS ======
+Thumbs.db
+.DS_Store

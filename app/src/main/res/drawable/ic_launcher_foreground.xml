@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Cow head silhouette simplified -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,20 C38,20 26,32 26,48 C26,58 31,66 39,71 L39,80 C39,82 41,84 43,84 L65,84 C67,84 69,82 69,80 L69,71 C77,66 82,58 82,48 C82,32 70,20 54,20 Z"/>
+    <!-- Ears -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M30,38 C24,34 20,40 24,46 C26,42 29,40 30,38 Z"/>
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M78,38 C84,34 88,40 84,46 C82,42 79,40 78,38 Z"/>
+    <!-- Eyes -->
+    <circle android:fillColor="#2E7D32" android:cx="44" android:cy="46" android:r="4"/>
+    <circle android:fillColor="#2E7D32" android:cx="64" android:cy="46" android:r="4"/>
+    <!-- Nostrils -->
+    <circle android:fillColor="#FFCDD2" android:cx="48" android:cy="60" android:r="3"/>
+    <circle android:fillColor="#FFCDD2" android:cx="60" android:cy="60" android:r="3"/>
+    <!-- Milk drops below -->
+    <path android:fillColor="#FFFFFF" android:pathData="M46,88 C46,92 50,95 54,95 C58,95 62,92 62,88 C62,84 54,78 54,78 C54,78 46,84 46,88 Z"/>
+</vector>
