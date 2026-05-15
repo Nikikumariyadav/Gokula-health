@@ -8,7 +8,12 @@ import com.example.gokulahealth.repository.CattleRepository
 class GokulaApp : Application() {
     val database by lazy { AppDatabase.getInstance(this) }
     val repository by lazy {
-        CattleRepository(database.cattleDao(), database.milkDao(), database.vaccinationDao())
+        CattleRepository(
+            database.cattleDao(),
+            database.milkDao(),
+            database.vaccinationDao(),
+            database.breedingDao()
+        )
     }
 
     override fun onCreate() {

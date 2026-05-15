@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gokula Health - PRD Document</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Arial', sans-serif; color: #222; background: #fff; font-size: 13px; line-height: 1.6; }
+
+  .cover {
+    height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    background: linear-gradient(135deg, #1B5E20, #2E7D32, #388E3C);
+    color: white; text-align: center; padding: 40px;
+    page-break-after: always;
+  }
+  .cover h1 { font-size: 48px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; }
+  .cover h2 { font-size: 20px; font-weight: 300; opacity: 0.85; margin-bottom: 30px; }
+  .cover .badge {
+    background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 30px; padding: 8px 24px; font-size: 14px; margin-bottom: 40px;
+  }
+  .cover .meta { font-size: 14px; opacity: 0.8; line-height: 2; }
+  .cover .cow-icon { font-size: 80px; margin-bottom: 20px; }
+
+  .content { max-width: 800px; margin: 0 auto; padding: 40px 50px; }
+
+  h1.section-title {
+    color: #1B5E20; font-size: 22px; border-bottom: 3px solid #2E7D32;
+    padding-bottom: 8px; margin: 40px 0 20px 0;
+  }
+  h2.sub-title { color: #2E7D32; font-size: 16px; margin: 20px 0 10px 0; }
+
+  p { margin-bottom: 12px; color: #333; }
+
+  .highlight-box {
+    background: #E8F5E9; border-left: 5px solid #2E7D32;
+    padding: 15px 20px; border-radius: 4px; margin: 15px 0;
+  }
+  .highlight-box p { margin: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  th { background: #2E7D32; color: white; padding: 10px 14px; text-align: left; font-size: 13px; }
+  td { padding: 9px 14px; border-bottom: 1px solid #e0e0e0; font-size: 12.5px; }
+  tr:nth-child(even) { background: #F1F8E9; }
+
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin-bottom: 6px; color: #333; }
+
+  .feature-card {
+    border: 1px solid #C8E6C9; border-radius: 8px; padding: 15px 18px;
+    margin: 10px 0; background: #fff;
+  }
+  .feature-card h3 { color: #2E7D32; font-size: 14px; margin-bottom: 6px; }
+
+  .tech-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 15px 0;
+  }
+  .tech-item {
+    background: #F1F8E9; border: 1px solid #A5D6A7;
+    border-radius: 6px; padding: 12px 15px;
+  }
+  .tech-item strong { color: #1B5E20; display: block; margin-bottom: 4px; }
+
+  .status-yes { color: #2E7D32; font-weight: bold; }
+  .status-no  { color: #C62828; font-weight: bold; }
+
+  .footer {
+    margin-top: 60px; padding: 20px; text-align: center;
+    border-top: 2px solid #C8E6C9; color: #666; font-size: 12px;
+  }
+
+  @media print {
+    .cover { height: 100vh; }
+    h1.section-title { page-break-before: auto; }
+    .content { padding: 30px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cow-icon">🐄</div>
+  <h1>Gokula Health</h1>
+  <h2>Digital Cattle Health Passport</h2>
+  <div class="badge">🏆 MindMatrix VTU Internship Program — Project #98</div>
+  <div class="meta">
+    <strong>Category:</strong> Android App Development using GenAI — Agriculture / Livestock<br/>
+    <strong>Team:</strong> Ritik Pandey &amp; Niki Kumari Yadav<br/>
+    <strong>GitHub:</strong> github.com/RitikPandey68/Gokula-Health<br/>
+    <strong>Date:</strong> May 2026
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- 1. EXECUTIVE SUMMARY -->
+  <h1 class="section-title">1. Executive Summary</h1>
+  <div class="highlight-box">
+    <p><strong>Gokula Health</strong> is an offline-first Android application that serves as a <em>digital health passport</em> for dairy cattle. It enables small-scale farmers to register cattle, record daily milk yield, schedule vaccinations with automated reminders, and visualize production trends — all without requiring internet connectivity.</p>
+  </div>
+  <p>Built using Kotlin and Android Studio, the app addresses a critical gap in India's dairy sector by digitizing manual, oral record-keeping practices into an intuitive mobile solution designed specifically for rural farmers.</p>
+
+  <!-- 2. PROBLEM STATEMENT -->
+  <h1 class="section-title">2. Problem Statement</h1>
+  <p>India is the world's largest producer of milk, yet small-scale dairy farmers face significant income losses due to:</p>
+  <ul>
+    <li><strong>Missed Heat Cycles:</strong> Farmers miss the optimal 12–18 hour breeding window because there's no systematic tracking system.</li>
+    <li><strong>Forgotten Vaccinations:</strong> Diseases like FMD (Foot &amp; Mouth Disease), HS, and BQ cause livestock deaths that are 100% preventable with timely vaccination.</li>
+    <li><strong>No Yield Analytics:</strong> Farmers cannot identify declining milk production trends without data, making it impossible to diagnose health issues early.</li>
+    <li><strong>Oral Record-Keeping:</strong> All cattle health data is stored in memory or paper, leading to loss of historical records and inability to prove cattle health when selling or insuring animals.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p>📊 <strong>Impact Scale:</strong> Over 70 million smallholder dairy farmers in India manage cattle without digital tools. A 10% improvement in vaccination coverage and milk yield tracking could add ₹15,000+ annual income per farmer.</p>
+  </div>
+
+  <!-- 3. SOLUTION -->
+  <h1 class="section-title">3. Solution Overview</h1>
+  <p>Gokula Health transforms a farmer's smartphone into a comprehensive cattle management system. The app acts as a "Health Passport" — a permanent digital record for each animal that travels with it through its entire life cycle.</p>
+
+  <h2 class="sub-title">Core Value Propositions</h2>
+  <ul>
+    <li>✅ Works completely <strong>offline</strong> — no internet required</li>
+    <li>✅ <strong>Reminders work even after phone restart</strong> (BootReceiver)</li>
+    <li>✅ Designed for <strong>low-tech users</strong> — emoji-based intuitive UI</li>
+    <li>✅ <strong>Free</strong> — no subscription, no cloud costs</li>
+    <li>✅ Data stored <strong>locally on device</strong> — private and secure</li>
+  </ul>
+
+  <!-- 4. FEATURES -->
+  <h1 class="section-title">4. Feature Specifications</h1>
+
+  <div class="feature-card">
+    <h3>🐄 F1 — Cattle Profile Management</h3>
+    <p>Register each cow with a unique Ear Tag ID, name, breed, date of birth, and photo from gallery or camera. Each profile serves as the cattle's permanent digital identity card.</p>
+    <ul>
+      <li>Ear Tag ID validation (unique per animal)</li>
+      <li>Photo upload from gallery</li>
+      <li>Breed cataloging (HF, Jersey, Gir, Sahiwal, etc.)</li>
+      <li>Full CRUD — add, view, update, delete cattle</li>
+    </ul>
+  </div>
+
+  <div class="feature-card">
+    <h3>🥛 F2 — Milk Diary (Daily Yield Tracking)</h3>
+    <p>Farmers record morning and evening milk yield in litres for each cow daily. The app automatically calculates the total daily yield and the monthly average.</p>
+    <ul>
+      <li>Separate morning + evening entry fields</li>
+      <li>Auto-calculates total yield per day</li>
+      <li>Duplicate date protection — updates existing record if same date</li>
+      <li>Monthly average auto-calculated (meets project success criteria)</li>
+    </ul>
+  </div>
+
+  <div class="feature-card">
+    <h3>📊 F3 — Yield Graph (MPAndroidChart)</h3>
+    <p>A 30-day bar chart visualizes milk production trends per cow, helping farmers instantly identify drops in production that may indicate health issues.</p>
+    <ul>
+      <li>MPAndroidChart BarChart (last 30 days)</li>
+      <li>X-axis: Date labels (MM-DD format)</li>
+      <li>Y-axis: Total litres</li>
+      <li>Animated on load (800ms)</li>
+    </ul>
+  </div>
+
+  <div class="feature-card">
+    <h3>💉 F4 — Vaccination Scheduler with Auto-Reminders</h3>
+    <p>Schedule vaccinations for FMD, HS, BQ, Anthrax, Brucellosis, IBR and others. The app automatically sets a device alarm 24 hours before the due date and sends a notification — works without internet.</p>
+    <ul>
+      <li>Dropdown with 7 common vaccine types</li>
+      <li>AlarmManager fires reminder 1 day before due date</li>
+      <li>BootReceiver re-schedules alarms after device restart</li>
+      <li>Status tracking: Upcoming → Due Soon → Overdue → Completed</li>
+      <li>Color-coded alerts (Green / Orange / Red)</li>
+    </ul>
+  </div>
+
+  <div class="feature-card">
+    <h3>🏠 F5 — Dashboard (Home Screen)</h3>
+    <p>A farmer-friendly dashboard showing all critical information at a glance: total cattle count, today's total milk yield across all cows, upcoming vaccinations this week, and overdue alerts.</p>
+  </div>
+
+  <!-- 5. TECH STACK -->
+  <h1 class="section-title">5. Technical Architecture</h1>
+
+  <h2 class="sub-title">Architecture Pattern: MVVM</h2>
+  <table>
+    <tr><th>Layer</th><th>Component</th><th>Purpose</th></tr>
+    <tr><td>View</td><td>Activities &amp; Fragments (ViewBinding)</td><td>UI rendering</td></tr>
+    <tr><td>ViewModel</td><td>CattleViewModel</td><td>UI state management, LiveData</td></tr>
+    <tr><td>Repository</td><td>CattleRepository</td><td>Single source of truth for data</td></tr>
+    <tr><td>Data</td><td>Room Database (SQLite)</td><td>Local offline storage</td></tr>
+  </table>
+
+  <h2 class="sub-title">Technology Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-item"><strong>Language</strong>Kotlin (100%)</div>
+    <div class="tech-item"><strong>Database</strong>Room (SQLite) — 3 tables</div>
+    <div class="tech-item"><strong>Charts</strong>MPAndroidChart v3.1.0</div>
+    <div class="tech-item"><strong>Notifications</strong>AlarmManager + BroadcastReceiver</div>
+    <div class="tech-item"><strong>Image Loading</strong>Glide v4.16</div>
+    <div class="tech-item"><strong>UI Components</strong>Material Design 3</div>
+    <div class="tech-item"><strong>Architecture</strong>MVVM + LiveData + Repository</div>
+    <div class="tech-item"><strong>Min SDK</strong>API 24 (Android 7.0)</div>
+  </div>
+
+  <h2 class="sub-title">Database Schema</h2>
+  <table>
+    <tr><th>Table</th><th>Key Fields</th><th>Purpose</th></tr>
+    <tr><td>cattle</td><td>id, earTag, name, breed, dob, photoUri</td><td>Animal profiles</td></tr>
+    <tr><td>milk_records</td><td>id, cattleId, date, morningYield, eveningYield</td><td>Daily milk data</td></tr>
+    <tr><td>vaccinations</td><td>id, cattleId, vaccineName, scheduledDate, isCompleted</td><td>Vaccine schedule</td></tr>
+  </table>
+
+  <!-- 6. APP FLOW -->
+  <h1 class="section-title">6. User Flow / Navigation</h1>
+  <table>
+    <tr><th>Screen</th><th>Access Path</th><th>Key Actions</th></tr>
+    <tr><td>Splash Screen</td><td>App launch</td><td>Branding, 1.8s delay</td></tr>
+    <tr><td>Home Dashboard</td><td>Default tab</td><td>View stats summary</td></tr>
+    <tr><td>Cattle List</td><td>Bottom Nav → Cattle</td><td>View all / Add new</td></tr>
+    <tr><td>Add Cattle</td><td>FAB on Cattle screen</td><td>Register new cow</td></tr>
+    <tr><td>Cattle Detail</td><td>Tap any cattle card</td><td>View chart, add milk/vaccine</td></tr>
+    <tr><td>Add Milk Record</td><td>Button on Detail screen</td><td>Enter morning + evening litres</td></tr>
+    <tr><td>Add Vaccination</td><td>Button on Detail screen</td><td>Schedule + set reminder</td></tr>
+    <tr><td>Alerts Tab</td><td>Bottom Nav → Alerts</td><td>All pending vaccinations</td></tr>
+  </table>
+
+  <!-- 7. SUCCESS CRITERIA -->
+  <h1 class="section-title">7. Success Criteria Verification</h1>
+  <table>
+    <tr><th>Requirement</th><th>Status</th><th>Implementation</th></tr>
+    <tr><td>Auto-calculate Monthly Average Yield</td><td class="status-yes">✅ Met</td><td>MilkDao.getMonthlyAverage() SQL query</td></tr>
+    <tr><td>Reminders work without internet</td><td class="status-yes">✅ Met</td><td>AlarmManager + BroadcastReceiver</td></tr>
+    <tr><td>Reminders survive device reboot</td><td class="status-yes">✅ Met</td><td>BootReceiver re-schedules all alarms</td></tr>
+    <tr><td>UI uses Cow / Milk / Syringe icons</td><td class="status-yes">✅ Met</td><td>Emoji icons + Vector drawables</td></tr>
+    <tr><td>MPAndroidChart milk yield graph</td><td class="status-yes">✅ Met</td><td>30-day BarChart per cattle</td></tr>
+    <tr><td>Room DB for long-term storage</td><td class="status-yes">✅ Met</td><td>3-table Room database</td></tr>
+    <tr><td>Cattle registration with Ear Tag + Photo</td><td class="status-yes">✅ Met</td><td>AddCattleActivity + Glide</td></tr>
+    <tr><td>Offline first</td><td class="status-yes">✅ Met</td><td>No internet permissions required</td></tr>
+  </table>
+
+  <!-- 8. IMPACT -->
+  <h1 class="section-title">8. Impact Goals</h1>
+  <table>
+    <tr><th>Goal</th><th>Description</th></tr>
+    <tr><td>🥛 White Revolution 2.0</td><td>Increasing dairy productivity through data-driven milk yield management</td></tr>
+    <tr><td>💰 Farmer Income</td><td>Reducing income loss by ensuring 100% vaccination coverage and zero missed breeding cycles</td></tr>
+    <tr><td>📱 Rural Digitization</td><td>Bringing precision technology to the animal husbandry sector for 70M+ small dairy farmers</td></tr>
+    <tr><td>🏥 Animal Health Passport</td><td>Increases resale value of cattle — buyers can verify full health history</td></tr>
+  </table>
+
+  <!-- 9. PROJECT LINKS -->
+  <h1 class="section-title">9. Project Links</h1>
+  <table>
+    <tr><th>Resource</th><th>Link</th></tr>
+    <tr><td>GitHub Repository</td><td>https://github.com/RitikPandey68/Gokula-Health</td></tr>
+    <tr><td>Live URL</td><td>N/A — Native Android Application (APK)</td></tr>
+    <tr><td>Project Category</td><td>Android App Development using GenAI — Agriculture/Livestock</td></tr>
+    <tr><td>MindMatrix Project #</td><td>98</td></tr>
+  </table>
+
+  <div class="footer">
+    <p><strong>Gokula Health</strong> — Digital Cattle Health Passport</p>
+    <p>MindMatrix VTU Internship Program | Project #98 | May 2026</p>
+    <p>Developed by: Ritik Pandey (RitikPandey68) &amp; Niki Kumari Yadav (Nikikumariyadav)</p>
+  </div>
+
+</div>
+</body>
+</html>

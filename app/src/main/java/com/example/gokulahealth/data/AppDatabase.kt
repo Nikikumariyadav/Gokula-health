@@ -5,17 +5,23 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Cattle::class, MilkRecord::class, Vaccination::class], version = 1, exportSchema = false)
+@Database(
+    entities = [Cattle::class, MilkRecord::class, Vaccination::class, BreedingRecord::class],
+    version = 2,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun cattleDao(): CattleDao
     abstract fun milkDao(): MilkDao
     abstract fun vaccinationDao(): VaccinationDao
+    abstract fun breedingDao(): BreedingDao
 
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null
         fun getInstance(context: Context): AppDatabase =
             INSTANCE ?: synchronized(this) {
                 Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "gokula_health.db")
+                    .fallbackToDestructiveMigration()
                     .build().also { INSTANCE = it }
             }
     }
