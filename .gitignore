@@ -1,0 +1,27 @@
+# Android
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Kotlin
+*.class
+*.jar
+*.aar
+
+# Node (legacy web files)
+node_modules/
+dist/
+.env
+.env.local
+
+# Keys & secrets
+google-services.json
+*.keystore
+*.jks
